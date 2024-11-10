@@ -8,7 +8,8 @@ Repo này được sử dụng với mục đích nghiên cứu, tạo preset ri
 Reference dataset: ám chỉ data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data
 |Tên  |Ý nghĩa|
 |:---|:---|
-|Reference dataset  |Ám chỉ data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data|
+|`Preset`|Là template được define sẵn các metrics và render UI|
+|`Reference dataset`|Data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data|
 
 # Mục tiêu
 Phát triển preset riêng cho các metrics đã define sẵn của team MLOps
