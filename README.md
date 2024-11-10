@@ -7,7 +7,7 @@ Repo này được sử dụng với mục đích nghiên cứu, tạo preset ri
 
 Reference dataset: ám chỉ data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data
 |Tên  |Ý nghĩa|
-|:---:|:---:|
+|:---|:---|
 |Reference dataset  |Ám chỉ data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data|
 
 # Mục tiêu
