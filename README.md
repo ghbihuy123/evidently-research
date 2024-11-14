@@ -1,33 +1,48 @@
-# Overview
-Repo này được sử dụng với mục đích nghiên cứu, tạo preset riêng cho dashboard và các metrics đã defined của team MLOps
+Yêu cầu input đầu vào:
+https://docs.evidentlyai.com/user-guide/input-data/column-mapping
 
-# Danh sách thuật ngữ
-- **Tên**: Tên của thuật ngữ
-- **Ý nghĩa**: Indicates whether it’s a class or function.
+Phiên bản Evidently: 0.4.39
 
-Reference dataset: ám chỉ data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data
-|Tên  |Ý nghĩa|
-|:---|:---|
-|`Preset`|Là template được define sẵn các metrics và render UI|
-|`Reference dataset`|Data được sử dụng để so sánh với input của model, ở đây ta có thể hiểu là production data|
+Data Quality, Data Drift đã custom lại theo template metrics của DucLH21 đề xuất
+- Đã tính toán được các metrics đã define, xuất ra file JSON
 
-# Mục tiêu
-Phát triển preset riêng cho các metrics đã define sẵn của team MLOps
+Phát triển thêm phần UI của dashboard, có thể làm 2 hướng
+- Phát triển Dashboard HTML giống như của Evidently, bằng cách viết lại hàm render html
+- Sử dụng BI tools ở bên ngoài, sử dụng file JSON xuất ra làm Input
+
+
+Presquite:
+- Phải truyền giá trị cho reference data và current data
+- Phải define column map
 
 1. Data Quality
-Requirements: Model input
-- Đề xuất sử dụng preset đã có sẵn
+Yêu cầu Input:
+- Data đầu vào là DataFrame
+- Cần define list categorical features và numerical feature
+- Phải có current data (reference data là optional)
 
 
-2. Model Explainer
-Requirements: Model input, a reference dataset
+2. Data Drift
+Yêu cầu Input: 
+- Data đầu vào là DataFrame
+- Cần define list categorical features và numerical feature
+- Phải có cả current và reference data
 
-3. Target drift
-Requirements: model predictions and/or target, a reference dataset.
+3. Model Quality
+- Phải có current data (reference data là optional)
+- Data đầu vào là DataFrame
+- Cần có ground truth (true label) và kết quả dự đoán\
+
+a. Regression (done)
+b. Binary Classification
+c. Multiclass Classification 
+d. Forecasting
+e. Ranking
+f. Recommendation
 
 
-4. Data Drift
-Requirements: model inputs, a reference dataset.
+3. Model Drift
+(Đang phát triển)
 
-5. Model Drift
-Requirements: model predictions and true labels.
+4. Model Explain
+(Đang phát triển)
